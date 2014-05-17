@@ -16,6 +16,6 @@ Simply upload to your web server and go to the address, or visit: www.pyroh.tk/p
 
 REQUIREMENTS
 
-PHP 5.x+
-Javascript enabled
-Apache 2.x+ or similar web server
+*PHP 5.x+
+*Javascript enabled
+*Apache 2.x+ or similar web server
