@@ -1,8 +1,7 @@
 ph11-refraction
 ===============
 
->NOTICE
-  Currently in development!
+>NOTICE<br>In development stage; interface in progress.
 
 Helps you with particular Physics homework.
 
@@ -10,12 +9,12 @@ Small web app to calculate speed of light in mediums, critical angles, use Snell
 
 
 INSTALLATION
-
+-
 Simply upload to your web server and go to the address, or visit: www.pyroh.tk/ph11-refraction.php
 
 
 REQUIREMENTS
-
-*PHP 5.x+
-*Javascript enabled
-*Apache 2.x+ or similar web server
+-
+PHP 5.x+<br>
+Javascript enabled<br>
+Apache 2.x+ or similar web server
