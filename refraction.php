@@ -6,12 +6,12 @@
 
 <br><br>
 
-<button type="button" onclick="showTextBox('n');showTextBox('vMedium');displayFormula('Light Speed');showCalc('light')">Light Speed</button>
-<button type="button" onclick="hideTextBox('n');hideTextBox('vMedium');hideFormula()">Hide</button><br>
-<button type="button" onclick="showTextBox('nI');showTextBox('nR');showTextBox('sinI');showTextBox('sinR');displayFormula('Snell\'s Law')">Snell's Law</button>
-<button type="button" onclick="hideTextBox('nI');hideTextBox('nR');hideTextBox('sinI');hideTextBox('sinR');hideFormula()">Hide</button><br>
-<button type="button" onclick="showTextBox('critical');showTextBox('nInc');displayFormula('Critical Angle')">Critical Angle</button>
-<button type="button" onclick="hideTextBox('critical');hideTextBox('nInc');hideFormula()">Hide</button><br><br>
+<button type="button" onclick="showTextBox('n');showTextBox('vMedium');displayFormula('Light Speed');showCalc('lightB')">Light Speed</button>
+<button type="button" onclick="hideTextBox('n');hideTextBox('vMedium');hideFormula();hideCalc('lightB')">Hide</button><br>
+<button type="button" onclick="showTextBox('nI');showTextBox('nR');showTextBox('sinI');showTextBox('sinR');displayFormula('Snell\'s Law');showCalc('snellB')">Snell's Law</button>
+<button type="button" onclick="hideTextBox('nI');hideTextBox('nR');hideTextBox('sinI');hideTextBox('sinR');hideFormula();hideCalc('snellB')">Hide</button><br>
+<button type="button" onclick="showTextBox('critical');showTextBox('nInc');displayFormula('Critical Angle');showCalc('critB')">Critical Angle</button>
+<button type="button" onclick="hideTextBox('critical');hideTextBox('nInc');hideFormula();hideCalc('critB')">Hide</button><br><br>
 
 <p id = "formulaArea" />
 
@@ -28,11 +28,13 @@ document.getElementById("formulaArea").innerHTML=("Now using " + formula);
 function hideFormula(formula) {
 document.getElementById("formulaArea").innerHTML=("");
 }
-
 function showCalc(type) {
 document.getElementById(type).style.display = "block";
 }
-function calcLight() {
+function hideCalc(type) {
+document.getElementById(type).style.display = "none";
+}
+
 <?php
 $idxref = $_POST["idxref"];  //index of refraction
 $lightVelMed = $POST["lightVelMed"];  //velocity of light in medium
@@ -63,9 +65,9 @@ $idxRef0 = $_POST["critang"];  //index of refraction, with 0 to differ from ligh
 <input type="text" id="critical" name="critAng" value="Critical Angle" style="display:none">
 <input type="text" id="nInc" name="idxRef0" value="Index of Refraction" style="display:none">
 
-<button type="button" id="light" onclick = calcLight()></button>
-<button type="button" id="snell" onclick = calcSnell()></button>
-<button type="button" id="crit" onclick = calcCrit()></button>
+<button type="button" id="lightB" onclick = calcLight() style="display:none">Calculate Light Speed</button>
+<button type="button" id="snellB" onclick = calcSnell() style="display:none">Calculate Snell's Law</button>
+<button type="button" id="critB" onclick = calcCrit style="display:none"()>Calculate Critical Angle</button>
 </form>
 
 
