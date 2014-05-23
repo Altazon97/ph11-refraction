@@ -1,5 +1,3 @@
-<!-- Next thing to write: jQuary to execute existing PHP scripts in seperate files !-->
-
 <html>
 <body>
 <title>Pyroh Refraction</title>
@@ -54,62 +52,60 @@ function hideCalc(type) {
 document.getElementById(type).style.display = "none";
 }
 
-function calcLight() {
-<?php
-$idxref = $_POST["idxref"];  //index of refraction
-$lightVelMed = $POST["lightVelMed"];  //velocity of light in medium
-if ($idxref == null) {
-	$ans = 300000000 / $lightVelMed;
-	echo $ans;
+function calcLight()
+{
+var n = document.getElementById('n').value;
+var vMedium = document.getElementById('vMedium').value;
+if (n == "") {
+	var ans = 300000000 / vMedium;
+	alert("Index of refraction is " + ans);
 }
-if ($lightVelMed == null) {
-	$ans = 300000000 / $idxref;
-	echo $ans;
+else if (vMedium == "") {
+	var ans = 300000000 / n;
+	alert("Velocity of light in medium is " + ans);
 }
-?>
 }
+
 function calcSnell() {
-<?php
-$idxrefI = $_POST["idxrefI"];  //initial index of refraction
-$idxrefF = $_POST["idxrefF"];  //final index of refraction
-$angI = $_POST["angI"];  //angle of incidence
-$angR = $_POST["angR"];  //angle of refraction
-if ($idxrefI == null) {
-	$templeft = sin($angI);
-	$tempright = (sin($angR)) * $idxrefF;
-	$ans = $templeft / $tempright;
-	echo $ans;
+var nI = document.getElementById('nI').value;
+var nR = document.getElementById('nR').value;
+var sinI = document.getElementById('sinI').value;
+var sinR = document.getElementById('sinR').value;
+
+if (nI == "") {
+	var templeft = Math.sin(Math.PI * (sinI / 180));
+	var tempright = (Math.sin(Math.PI * (sinR / 180))) * nR;
+	var ans = templeft / tempright;
+	alert("Initial index of refraction is " + ans);
 }
-if ($angI == null) {
-	$tempright = $idxrefF * (sin($angR));
-	$ans = $templeft / $idxrefI;
-	echo $ans;
+else if (sinI == "") {
+	var templeft = nR * (Math.sin(Math.PI * (sinR / 180)));
+	var ans = templeft / nI;
+	alert("Inifial angle of refraction is " + ans);
 }
-if ($idxrefF == null) {
-	$templeft = $idxrefI * (sin($angR));
-	$ans = $tempright / (sin($angI));
-	echo $ans;
+else if (nR == "") {
+	var templeft = nI * (Math.sin(Math.PI * (sinI/180)));
+	var ans = templeft / (Math.sin(Math.PI * (sinR/180)));
+	alert(ans);
 }
-if ($angF == null) {
-	$templeft = $idxrefI * (sin($angI));
-	$ans = $templeft / $idxrefF;
-	echo $ans;
+else if (sinR == "") {
+	var templeft = nI * (Math.asin(Math.PI * (sinI / 180)));
+	var ans = templeft / nR;
+	alert("Final angle of refraction is" + ans);
 }
-?>
 }
+
 function calcCrit() {
-<?php
-$critAng = $_POST["critAng"];  //critical angle
-$idxRef0 = $_POST["idxref0"];  //index of refraction, with 0 to differ from light speed formula
-if ($critAng == null) {
-	$ans = 1 / $idxref0;
-	echo $ans;
+var critAng = document.getElementById('critAng').value;
+var idxRef0 = document.getElementById("idxref0").value;  //index of refraction, with 0 to differ from light speed formula
+if (critAng == "") {
+	ans = 1 / idxref0;
+	alert("Critical angle is " + ans);
 }
-if ($idxref0 == null) {
-	$ans = 1 / (sin($critAng));
-	echo $ans;
+else if (idxref0 == "") {
+	ans = 1 / (Math.sin(critAng));
+	alert("Index of refraction is " + ans);
 }
-?>
 }
 </script>
 
