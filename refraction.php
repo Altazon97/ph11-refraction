@@ -16,16 +16,16 @@
 <p id = "formulaArea" />
 
 <form>
-<input type="text" id="n" name="idxref" value="Index of Refraction" style="display:none">
-<input type="text" id="vMedium" name="lightVelMed" value="Velocity of Light in Medium" style="display:none">
+<input type="text" id="n" name="idxref" placeholder="Index of Refraction" style="display:none">
+<input type="text" id="vMedium" name="lightVelMed" placeholder="Velocity of Light in Medium" style="display:none">
 
-<input type="text" id="nI" name="idxrefI" value="Initial Index of Refraction" style="display:none">
-<input type="text" id="nR" name="idxrefF" value="Final Index of Refraction" style="display:none">
-<input type="text" id="sinI" name="angI" value="Angle of Incidence" style="display:none">
-<input type="text" id="sinR" name="angR" value="Angle of Refraction" style="display:none">
+<input type="text" id="nI" name="idxrefI" placeholder="Initial Index of Refraction" style="display:none">
+<input type="text" id="nR" name="idxrefF" placeholder="Final Index of Refraction" style="display:none">
+<input type="text" id="sinI" name="angI" placeholder="Angle of Incidence" style="display:none">
+<input type="text" id="sinR" name="angR" placeholder="Angle of Refraction" style="display:none">
 
-<input type="text" id="critical" name="critAng" value="Critical Angle" style="display:none">
-<input type="text" id="nInc" name="idxRef0" value="Index of Refraction" style="display:none">
+<input type="text" id="critical" name="critAng" placeholder="Critical Angle" style="display:none">
+<input type="text" id="nInc" name="idxRef0" placeholder="Index of Refraction" style="display:none">
 
 <button type="button" id="lightB" onclick = "calcLight()" style="display:none">Calculate Light Speed</button>
 <button type="button" id="snellB" onclick = "calcSnell()" style="display:none">Calculate Snell's Law</button>
