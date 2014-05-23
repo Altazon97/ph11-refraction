@@ -52,6 +52,11 @@ function hideCalc(type) {
 document.getElementById(type).style.display = "none";
 }
 
+//quick constants to multiply to convert radians and degrees
+//Javascript LOVES to use radians in trigonometric functions
+var DtoR = Math.PI/180;
+var RtoD = 180/Math.PI;
+
 function calcLight()
 {
 var n = document.getElementById('n').value;
@@ -79,9 +84,9 @@ if (nI == "") {
 	alert("Initial index of refraction is " + ans);
 }
 else if (sinI == "") {
-	var templeft = nR * (Math.sin(Math.PI * (sinR / 180)));
+	var templeft = nR * (Math.sin(sinR * DtoR));
 	var ans = templeft / nI;
-	alert("Inifial angle of refraction is " + ans);
+	alert("Initial angle of refraction is " + (Math.asin(ans) * RtoD));
 }
 else if (nR == "") {
 	var templeft = nI * (Math.sin(Math.PI * (sinI/180)));
@@ -89,21 +94,21 @@ else if (nR == "") {
 	alert(ans);
 }
 else if (sinR == "") {
-	var templeft = nI * (Math.asin(Math.PI * (sinI / 180)));
+	var templeft = nI * (Math.sin(sinI * DtoR));
 	var ans = templeft / nR;
-	alert("Final angle of refraction is" + ans);
+	alert("Final angle of refraction is" + (Math.asin(ans) * RtoD));
 }
 }
 
 function calcCrit() {
-var critAng = document.getElementById('critAng').value;
-var idxRef0 = document.getElementById("idxref0").value;  //index of refraction, with 0 to differ from light speed formula
-if (critAng == "") {
-	ans = 1 / idxref0;
-	alert("Critical angle is " + ans);
+var critical = document.getElementById('critical').value;
+var nInc = document.getElementById("nInc").value;  //nInc is still the index of refraction, just written
+if (critical == "") {                              //differently to avoid duplicates in light speed formula
+	var ans = 1 / nInc;
+	alert("Critical angle is " + Math.asin(ans) * RtoD);
 }
-else if (idxref0 == "") {
-	ans = 1 / (Math.sin(critAng));
+else if (nInc == "") {
+	var ans = 1 / (Math.sin(Math.PI * (critical/180)));
 	alert("Index of refraction is " + ans);
 }
 }
