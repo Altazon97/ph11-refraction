@@ -1,7 +1,7 @@
 ph11-refraction
 ===============
 
->NOTICE<br>In development stage; interface in progress.
+>STATUS<br>Base complete.  Constructing interface.
 
 Helps you with particular Physics homework.
 
