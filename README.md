@@ -8,7 +8,7 @@ Small web app to calculate speed of light in mediums, critical angles, and use S
 
 INSTALLATION
 -
-Simply upload to your web server and enter the address, or visit on my website: www.pyroh.tk/ph11-refraction.php
+Simply upload to your web server and enter the address, or visit on my website: www.ericsund.tk/ph11-refraction.php
 
 
 REQUIREMENTS
@@ -16,6 +16,3 @@ REQUIREMENTS
 PHP 5.x+<br>
 Javascript enabled<br>
 Apache 2.x+ or similar web server<br>
-
-
->STATUS<br>Base build complete.  Constructing interface.
