@@ -8,8 +8,7 @@ Small web app to calculate speed of light in mediums, critical angles, and use S
 
 INSTALLATION
 -
-Simply upload to your web server and enter the address, or visit on my website: www.ericsund.tk/ph11-refraction.php
-
+Simply upload to your web server and enter the address.
 
 REQUIREMENTS
 -
